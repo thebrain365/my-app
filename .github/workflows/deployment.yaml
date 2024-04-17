@@ -10,7 +10,16 @@ jobs:
       runs-on: ubuntu-latest
 
       steps:
-         - name: Testing the app
-           run: |
-             cd my-app
-             npm test
+         - name: Checking out code
+           uses: actions/checkout@v4
+         
+         - name: Setup node
+           uses: actions/setup-node@v3
+           with:
+            node-version: "20"
+         
+         - name: Installing the dependencies
+           run: npm install
+
+         - name: Running tests
+           run: npm test
