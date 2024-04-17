@@ -1,0 +1,14 @@
+name: Deployment Workflow
+
+on:
+   push:
+      branches:
+         - main
+
+jobs:
+   test:
+      runs-on: ubuntu-latest
+
+      steps:
+         - name: Testing the app
+           run: npm test
