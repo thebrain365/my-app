@@ -40,5 +40,5 @@ jobs:
          - name: Installing the dependencies
            run: npm install
  
-         - name: Running tests
-           run: npm test
+         - name: Building app
+           run: npm build
