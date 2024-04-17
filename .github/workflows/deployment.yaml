@@ -10,7 +10,7 @@ jobs:
       runs-on: ubuntu-latest
 
       steps:
-         - name: Checking out code
+         - name: Checking out the code
            uses: actions/checkout@v4
          
          - name: Setup node
@@ -21,5 +21,24 @@ jobs:
          - name: Installing the dependencies
            run: npm install
 
+         - name: Running tests
+           run: npm test
+   
+   build:
+      runs-on: ubuntu-latest
+      needs: test
+
+      steps:
+         - name: Checking out the code
+           uses: actions/checkout@v4
+         
+         - name: Setup node
+           uses: actions/setup-node@v3
+           with:
+            node-version: "20"
+
+         - name: Installing the dependencies
+           run: npm install
+ 
          - name: Running tests
            run: npm test
