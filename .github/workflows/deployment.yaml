@@ -18,8 +18,8 @@ jobs:
            with:
             node-version: "20"
          
-         # - name: Installing the dependencies
-         #   run: npm install
+         - name: Installing the dependencies
+           run: npm install
 
          - name: Running tests
            run: npm test
