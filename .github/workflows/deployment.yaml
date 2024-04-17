@@ -11,4 +11,6 @@ jobs:
 
       steps:
          - name: Testing the app
-           run: npm test
+           run: |
+             cd my-app
+             npm test
