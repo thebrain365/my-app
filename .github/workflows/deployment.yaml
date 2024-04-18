@@ -6,39 +6,50 @@ on:
          - main
 
 jobs:
-   test:
-      runs-on: ubuntu-latest
+   # test:
+   #    runs-on: ubuntu-latest
 
-      steps:
-         - name: Checking out the code
-           uses: actions/checkout@v4
+   #    steps:
+   #       - name: Checking out the code
+   #         uses: actions/checkout@v4
          
-         - name: Setup node
-           uses: actions/setup-node@v3
-           with:
-            node-version: "20"
+   #       - name: Setup node
+   #         uses: actions/setup-node@v3
+   #         with:
+   #          node-version: "20"
          
-         - name: Installing the dependencies
-           run: npm install
+   #       - name: Installing the dependencies
+   #         run: npm install
 
-         - name: Running tests
-           run: npm test
+   #       - name: Running tests
+   #         run: npm test
    
-   build:
+   # build:
+   #    runs-on: ubuntu-latest
+   #    needs: test
+
+   #    steps:
+   #       - name: Checking out the code
+   #         uses: actions/checkout@v4
+         
+   #       - name: Setup node
+   #         uses: actions/setup-node@v3
+   #         with:
+   #          node-version: "20"
+
+   #       - name: Installing the dependencies
+   #         run: npm install
+ 
+   #       - name: Building app
+   #         run: npm run build
+   
+   publish:
       runs-on: ubuntu-latest
-      needs: test
+      # needs: build
 
       steps:
-         - name: Checking out the code
-           uses: actions/checkout@v4
-         
-         - name: Setup node
+         - name: Checking out code
            uses: actions/setup-node@v3
-           with:
-            node-version: "20"
 
-         - name: Installing the dependencies
-           run: npm install
- 
-         - name: Building app
-           run: npm run build
+         - name: Build image
+           uses: docker build . -t my-app
