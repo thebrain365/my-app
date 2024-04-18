@@ -49,7 +49,7 @@ jobs:
 
       steps:
          - name: Checking out code
-           uses: actions/setup-node@v3
+           uses: actions/checkout@v4
 
          - name: Build image
            uses: docker build . -t my-app
