@@ -10,13 +10,16 @@ jobs:
       runs-on: ubuntu-latest
 
       steps:
-         - name: Checking out the code
-           uses: actions/checkout@v4
-         
          - name: Setup node
            uses: actions/setup-node@v3
            with:
             node-version: "20"
+
+         - name: Checking out the code
+           uses: actions/checkout@v4
+
+         - name: Creating node_modules folder
+           run: mkdir node_modules
          
          - name: Cache modules
            id : cache-npm
@@ -24,15 +27,12 @@ jobs:
            env:
             cache-name: cache-node-modules
            with:
-            path: ~/.npm
+            path: ./node_modules
             key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
          
-         # - name: Installing the dependencies
-         #   if: ${{ steps.cache-npm.outputs.cache-hit == 'false' }}
-         #   run: npm install
-
-         # - name: Running cat
-         #   run: cat package.json
+         - name: Installing the dependencies
+           if: ${{ steps.cache-npm.outputs.cache-hit == 'false' }}
+           run: npm install
            
          - name: Running tests
            run: npm test
