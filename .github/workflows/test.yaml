@@ -12,9 +12,9 @@ jobs:
       steps:
          - name: Checking out code
            uses: actions/checkout@v4
-           
-         - name: Running command 'env'
-           run: env
+
+         - name: Installing dependencies
+           run: npm run install
 
          - name: Running command 'pwd'
            run: pwd
