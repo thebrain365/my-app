@@ -1,0 +1,15 @@
+name: Testing Action Runner
+
+on:
+   push:
+      branches:
+         main
+
+jobs:
+   testing:
+      runs-on: ubuntu latest
+
+      steps:           
+         - name: Running command 'env'
+           run: env
+
