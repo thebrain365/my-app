@@ -1,15 +1,15 @@
-name: Testing Action Runner
+# name: Testing Action Runner
 
-on:
-   push:
-      branches:
-         main
+# on:
+#    push:
+#       branches:
+#          main
 
-jobs:
-   testing:
-      runs-on: ubuntu-latest
+# jobs:
+#    testing:
+#       runs-on: ubuntu-latest
 
-      steps:
+#       steps:
          # - name: Checking out code
          #   uses: actions/checkout@v4
 
