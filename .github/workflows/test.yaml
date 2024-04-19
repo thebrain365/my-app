@@ -10,8 +10,8 @@ jobs:
       runs-on: ubuntu-latest
 
       steps:
-         - name: Checking out code
-           uses: actions/checkout@v4
+         # - name: Checking out code
+         #   uses: actions/checkout@v4
 
          # - name: Running command 'pwd'
          #   run: pwd
