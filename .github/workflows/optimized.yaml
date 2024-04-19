@@ -17,15 +17,9 @@ jobs:
          
          - name: Checking out the code
            uses: actions/checkout@v4
-
-         - name: Running ls
-           run: ls
            
-         - name: Creating node_modules folder
-           run: mkdir node_modules
-
-         - name: Running ls
-           run: ls ./node_modules
+         # - name: Creating node_modules folder
+         #   run: mkdir node_modules
          
          - name: Cache modules
            id : cache-npm
@@ -33,11 +27,9 @@ jobs:
            env:
             cache-name: cache-node-modules
            with:
-            path: node_modules
+            # path: node_modules
+            path: ~/.npm
             key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-         
-         - name: Running ls
-           run: ls ./node_modules | grep -E "^jest"
          
          - name: Installing the dependencies
            if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
