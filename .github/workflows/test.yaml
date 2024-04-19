@@ -9,7 +9,10 @@ jobs:
    testing:
       runs-on: ubuntu latest
 
-      steps:           
+      steps:
+         - name: Checking out code
+           uses: actions/checkout@v4
+           
          - name: Running command 'env'
            run: env
 
