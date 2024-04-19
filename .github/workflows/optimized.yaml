@@ -31,11 +31,11 @@ jobs:
            if: ${{ steps.cache-npm.outputs.cache-hit == 'false' }}
            run: npm install
 
-         - name: Running cat
-           run: cat package.json
+         # - name: Running cat
+         #   run: cat package.json
            
          - name: Running tests
-           run: npm run test
+           run: npm test
    
    # build:
    #    runs-on: ubuntu-latest
