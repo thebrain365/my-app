@@ -28,6 +28,7 @@ jobs:
             key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
          
          - name: Installing the dependencies
+           if: ${{ steps.cache-npm.outputs.cache-hit == 'false' }}
            run: npm install
 
          - name: Running tests
