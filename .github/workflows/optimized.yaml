@@ -1,4 +1,4 @@
-name: Deployment Workflow
+name: Optimized Deployment Workflow
 
 on:
    push:
