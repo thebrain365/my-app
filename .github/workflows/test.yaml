@@ -13,6 +13,12 @@ jobs:
          - name: Checking out code
            uses: actions/checkout@v4
 
+         - name: Running command 'pwd'
+           run: pwd
+
+         - name: Running command 'ls -a'
+           run: ls -a
+
          - name: Installing dependencies
            run: npm install
 
