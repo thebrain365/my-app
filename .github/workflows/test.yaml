@@ -28,5 +28,8 @@ jobs:
          - name: Running command 'ls -a'
            run: ls -a
 
-         - name: Running command 'ls -a'
+         - name: Running command 'ls -a ~/'
+           run: ls -a ~/
+
+         - name: Running command 'ls -a ~/.npm'
            run: ls -a ~/.npm
