@@ -21,19 +21,19 @@ jobs:
 
          # - name: Installing dependencies
          #   run: npm install
-         - name: Setup node
-           uses: actions/setup-node@v3
-           with:
-            node-version: "20"
+         # - name: Setup node
+         #   uses: actions/setup-node@v3
+         #   with:
+         #    node-version: "20"
 
-         - name: Running command 'pwd'
-           run: pwd
+         # - name: Running command 'pwd'
+         #   run: pwd
 
-         - name: Running command 'ls -a'
-           run: ls -a
+         # - name: Running command 'ls -a'
+         #   run: ls -a
 
-         - name: Running command 'ls -a ~/'
-           run: ls -a ~/
+         # - name: Running command 'ls -a ~/'
+         #   run: ls -a ~/
 
-         - name: Running command 'ls -a ~/.npm'
-           run: ls -a ~/.npm
+         # - name: Running command 'ls -a ~/.npm'
+         #   run: ls -a ~/.npm
