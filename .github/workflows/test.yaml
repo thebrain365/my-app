@@ -10,9 +10,11 @@ jobs:
       runs-on: ubuntu-latest
 
       steps:
-         # - name: Checking out code
-         #   uses: actions/checkout@v4
-
          - name: Running command 'env'
            run: env
 
+         - name: Running command 'pwd'
+           run: ls -al
+
+         - name: Running command 'ls -al'
+           run: ls -al
