@@ -30,7 +30,10 @@ jobs:
          - name: Installing the dependencies
            if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
            run: npm install
-           
+         
+         - name: Checking formatting
+           run: npx run prettier -c .\app
+
          - name: Running tests
            run: npm test
    
@@ -80,5 +83,5 @@ jobs:
          - name: Checking password
            run: cat ~/.docker/config.json
          
-         # - name: Push image
-         #   run: docker push ${{ secrets.DOCKER_IMAGE }}
+         - name: Push image
+           run: docker push ${{ secrets.DOCKER_IMAGE }}
