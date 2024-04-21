@@ -74,14 +74,15 @@ jobs:
          - name: Checking out code
            uses: actions/checkout@v4
 
-         - name: Build image
-           run: docker build . -t ${{ secrets.DOCKER_IMAGE }}
+         - name: Login to GitHub Container Registry
+           uses: docker/login-action@v3
+           with:
+            registry: ghcr.io
+            username: ${{ github.repository_owner }}
+            password: ${{ secrets.GITHUB_TOKEN }}
          
-         - name: Login to Docker
-           run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+         - name: Build Docker Image
+           run: docker build -t ghcr.io/${{ github.repository_owner }}:latest .
          
-         - name: Checking password
-           run: cat ~/.docker/config.json
-         
-         - name: Push image
-           run: docker push ${{ secrets.DOCKER_IMAGE }}
+         - name: Push Image to GHCR
+           run: docker push ghcr.io${{ github.repository_owner }}:latest
