@@ -1,22 +1,21 @@
-import '@testing-library/jest-dom'
-import { render, screen } from '@testing-library/react'
-import Home from '@/app/page'
+import "@testing-library/jest-dom";
+import { render, screen } from "@testing-library/react";
+import Home from "@/app/page";
 
-describe('Home', () => {
-   it('should have  Docs text', async () => {
-      render(<Home/>)
-   
-      const myElem = await screen.findByText(/Docs/i)
-   
-      expect(myElem).toBeInTheDocument()
-   })
+describe("Home", () => {
+   it("should have My-App text", async () => {
+      render(<Home />);
 
-       it('should contain the text "information"', () => {
-        render(<Home />) 
+      const myElem = await screen.findByText(/My-App/i);
 
-        const myElem = screen.getByText(/information/i) 
+      expect(myElem).toBeInTheDocument();
+   });
 
-        expect(myElem).toBeInTheDocument()
-    })
-})
- 
+   it("should contain a list", () => {
+      render(<Home />);
+
+      const myElem = screen.getByRole("list");
+
+      expect(myElem).toBeInTheDocument();
+   });
+});
