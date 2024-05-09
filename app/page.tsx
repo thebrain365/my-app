@@ -10,6 +10,7 @@ export default function Home() {
          <ul>
             <li>NextJS</li>
             <li>Jest</li>
+            <li>Cypress</li>
             <li>Tailwind CSS</li>
             <li>Docker</li>
             <li>ESLint</li>

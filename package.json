@@ -9,7 +9,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "prettier:c": "npx prettier -c app",
-    "prettier:w": "npx prettier -w app"
+    "prettier:w": "npx prettier -w app",
+    "cy:open": "cypress open"
   },
   "dependencies": {
     "next": "14.2.1",
@@ -23,6 +24,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "cypress": "^13.8.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.1",
     "eslint-config-prettier": "9.1.0",
