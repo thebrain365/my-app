@@ -35,7 +35,7 @@ jobs:
            run: npx prettier -c app
 
          - name: Running tests
-           run: npm test:jest
+           run: npm test
 
    cypress-test:
       runs-on: ubuntu-latest
@@ -51,7 +51,7 @@ jobs:
 
    build:
       runs-on: ubuntu-latest
-      needs: test
+      needs: [test, cypress-test]
 
       steps:
          - name: Setup node
