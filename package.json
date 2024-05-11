@@ -8,7 +8,7 @@
       "start": "next start",
       "test": "jest",
       "test:watch": "jest --watch",
-      "cy:open": "cypress open",
+      "cy:open": "cypress open --config-file=cypress.config.ts",
       "cy:run": "cypress run",
       "cy:record": "cypress run --record --key",
       "prettier:c": "npx prettier -c app",
